@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Tilemap.png" type="Texture" id=1]
+[ext_resource path="res://idk lol.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="Tiles" type="Node2D"]
+
+[node name="Skyscraper" type="Sprite" parent="."]
+position = Vector2( -8.79763, 1.7818 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Skyscraper"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Skyscraper/StaticBody2D"]
+shape = SubResource( 4 )
+
+[node name="Pavement" type="Sprite" parent="."]
+position = Vector2( 72.8381, 2.78109 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 64, 0, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Pavement"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pavement/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Concrete" type="Sprite" parent="."]
+position = Vector2( 151.041, 2.15042 )
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Concrete"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Concrete/StaticBody2D"]
+shape = SubResource( 2 )
+
+[node name="Metro floor" type="Sprite" parent="."]
+position = Vector2( -6.55016, 84.5633 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 64, 64, 64 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Metro floor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Metro floor/StaticBody2D"]
+shape = SubResource( 4 )
+
+[node name="Metro wall" type="Sprite" parent="."]
+position = Vector2( 73.2347, 85.687 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 64, 64 )
