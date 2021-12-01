@@ -6,7 +6,8 @@ const GRAVITY = 50
 const MAX_FALL_SPEED = 1000
 
 var y_velo = 0
-var grounded 
+var grounded
+var web_scene = preload("res://Web projectile.tscn")
 
 #gives the player 0.1 seconds after leaving the ground where they can still jump
 func coyote_time():
@@ -45,3 +46,8 @@ func _physics_process(delta):
 		y_velo = 5
 	if y_velo > MAX_FALL_SPEED:
 		y_velo = MAX_FALL_SPEED
+	
+	if Input.is_action_just_pressed("Sling"):
+		var scene_node = get_parent()
+		scene_node.add_child(web_scene.instance())
+		get_tree().get_root().call_deferred("add_child", web_scene)
