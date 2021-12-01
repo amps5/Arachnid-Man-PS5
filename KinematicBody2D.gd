@@ -28,8 +28,8 @@ func _physics_process(delta):
 	else:
 		coyote_time()
 	
-	#wall and cieling stick
-	if not is_on_ceiling() and not is_on_wall():
+	#wall and cieling stick (no more ceiling stick)
+	if not is_on_wall():
 		y_velo += GRAVITY
 	#jump
 	if grounded and Input.is_action_just_pressed("ui_up"):
